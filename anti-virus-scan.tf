@@ -91,6 +91,19 @@ data "aws_iam_policy_document" "main_scan" {
     resources = formatlist("%s/*", data.aws_s3_bucket.main_scan.*.arn)
   }
 
+
+  statement {
+    sid = "ssmGetParam"
+
+    effect = "Allow"
+
+    actions = [
+      "ssm:GetParameter",
+    ]
+
+    resources = [data.aws_ssm_parameter.api_key.arn]
+  }
+
   dynamic "statement" {
     for_each = length(compact([var.av_scan_start_sns_arn, var.av_status_sns_arn])) != 0 ? toset([0]) : toset([])
 
@@ -185,6 +198,13 @@ resource "aws_lambda_function" "main_scan" {
       AV_STATUS_SNS_PUBLISH_CLEAN    = var.av_status_sns_publish_clean
       AV_STATUS_SNS_PUBLISH_INFECTED = var.av_status_sns_publish_infected
       AV_DELETE_INFECTED_FILES       = var.av_delete_infected_files
+      AV_STATUS_POST_URL             = var.av_status_post_url
+      AV_STATUS_POST_KEY_SECRET_NAME = var.av_status_post_key_secret_name
+      AV_TIMESTAMP_METADATA          = var.av_timestamp_metadata
+      AV_STATUS_METADATA             = var.av_status_metadata
+      AV_SIGNATURE_METADATA          = var.av_signature_metadata
+      AV_STATUS_CLEAN                = var.av_status_clean
+      AV_STATUS_INFECTED             = var.av_status_infected
     }
   }
 

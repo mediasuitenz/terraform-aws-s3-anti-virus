@@ -115,3 +115,46 @@ variable "av_delete_infected_files" {
   type        = string
   default     = "False"
 }
+
+variable "av_status_post_url" {
+  description = "URL to post the results to."
+  type        = string
+  default     = ""
+}
+
+variable "av_status_post_key_secret_name" {
+  description = "Name of the API Key to post the results."
+  type        = string
+  default     = ""
+}
+
+variable "av_timestamp_metadata" {
+  description = "The tag/metadata name representing file's scan time."
+  type        = string
+  default     = "av-timestamp"
+}
+
+variable "av_status_metadata" {
+  description = "The tag/metadata name representing file's AV status."
+  type        = string
+  default     = "av-status"
+}
+
+variable "av_signature_metadata" {
+  description = "The tag/metadata name representing file's AV type."
+  type        = string
+  default     = "av-signature"
+}
+
+variable "av_status_clean" {
+  description = "The value assigned to clean items inside of tags/metadata."
+  type        = string
+  default     = "CLEAN"
+}
+
+variable "av_status_infected" {
+  description = "The value assigned to clean items inside of tags/metadata."
+  type        = string
+  default     = "INFECTED"
+}
+
