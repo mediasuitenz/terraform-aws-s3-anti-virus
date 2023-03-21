@@ -80,6 +80,20 @@ data "aws_iam_policy_document" "main_scan" {
   }
 
   statement {
+    sid = "s3GetLambdaCode"
+
+    effect = "Allow"
+
+    actions = [
+      "s3:GetObject",
+    ]
+
+    resources = [
+      "arn:aws:s3:::${var.lambda_s3_bucket}/${var.lambda_package_key}",
+    ]
+  }
+
+  statement {
     sid = "kmsDecrypt"
 
     effect = "Allow"
