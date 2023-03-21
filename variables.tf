@@ -23,6 +23,7 @@ variable "lambda_s3_bucket" {
 
 variable "lambda_version" {
   description = "The version the Lambda function to deploy."
+  default = ""
 }
 
 variable "lambda_package" {
@@ -157,4 +158,3 @@ variable "av_status_infected" {
   type        = string
   default     = "INFECTED"
 }
-
