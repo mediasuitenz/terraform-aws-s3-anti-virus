@@ -143,7 +143,7 @@ resource "aws_lambda_function" "main_update" {
   function_name = var.name_update
   role          = aws_iam_role.main_update.arn
   handler       = "update.lambda_handler"
-  runtime       = "python3.7"
+  runtime       = "python3.8"
   memory_size   = var.memory_size
   timeout       = var.timeout_seconds
 
