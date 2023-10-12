@@ -219,6 +219,7 @@ resource "aws_lambda_function" "main_scan" {
       AV_SIGNATURE_METADATA          = var.av_signature_metadata
       AV_STATUS_CLEAN                = var.av_status_clean
       AV_STATUS_INFECTED             = var.av_status_infected
+      AV_ADDITIONAL_SCAN_FLAGS       = var.av_additional_scan_flags
     }
   }
 

@@ -115,6 +115,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_av_additional_scan_flags"></a> [av\_additional\_scan\_flags](#input\_av\_additional\_scan\_flags) | Additional flags to pass to antivirus scan command. | `string` | `""` | no |
 | <a name="input_av_definition_s3_bucket"></a> [av\_definition\_s3\_bucket](#input\_av\_definition\_s3\_bucket) | Bucket containing antivirus database files. | `string` | n/a | yes |
 | <a name="input_av_definition_s3_prefix"></a> [av\_definition\_s3\_prefix](#input\_av\_definition\_s3\_prefix) | Prefix for antivirus database files. | `string` | `"clamav_defs"` | no |
 | <a name="input_av_delete_infected_files"></a> [av\_delete\_infected\_files](#input\_av\_delete\_infected\_files) | Set it True in order to delete infected values. | `string` | `"False"` | no |

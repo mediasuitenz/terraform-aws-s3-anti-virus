@@ -129,6 +129,12 @@ variable "av_status_post_key_secret_name" {
   default     = ""
 }
 
+variable "av_additional_scan_flags" {
+  description = "Additional flags to pass to antivirus scan command."
+  type        = string
+  default     = ""
+}
+
 variable "av_timestamp_metadata" {
   description = "The tag/metadata name representing file's scan time."
   type        = string
